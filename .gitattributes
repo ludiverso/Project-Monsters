@@ -1,0 +1,37 @@
+# Normalize line endings for text files
+* text=auto
+
+# Unity YAML assets should remain text for diffs
+*.meta text
+*.unity text
+*.prefab text
+*.asset text
+*.mat text
+*.anim text
+*.controller text
+*.overrideController text
+*.physicsMaterial2D text
+*.physicsMaterial text
+*.playable text
+*.mask text
+*.brush text
+*.shadervariants text
+*.asmdef text
+*.asmref text
+
+# Common binary assets should not be merged as text
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.psd binary
+*.tga binary
+*.tif binary
+*.tiff binary
+*.fbx binary
+*.blend binary
+*.wav binary
+*.mp3 binary
+*.ogg binary
+*.mp4 binary
+*.mov binary
+*.dll binary
