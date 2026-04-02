@@ -27,4 +27,4 @@ jobs:
         uses: arduino/setup-task@v2
 
       - name: Validar formatação
-        run: task format-check
+        run: dotnet format Project-Monsters.slnx --verify-no-changes
