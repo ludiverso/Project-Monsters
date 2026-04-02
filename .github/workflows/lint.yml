@@ -11,7 +11,7 @@ on:
       - main
 
 jobs:
-  format-check:
+  validate-infra:
     runs-on: ubuntu-latest
 
     steps:
