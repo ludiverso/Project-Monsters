@@ -1,0 +1,17 @@
+version: '3'
+
+tasks:
+  format:
+    desc: Formata o código C# do projeto principal
+    cmds:
+      - dotnet format Assembly-CSharp.csproj
+
+  format-check:
+    desc: Verifica se há divergências de formatação
+    cmds:
+      - dotnet format Assembly-CSharp.csproj --verify-no-changes
+
+  lint:
+    desc: Alias para checagem de formatação
+    cmds:
+      - task: format-check
