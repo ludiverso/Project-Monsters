@@ -1,0 +1,5 @@
+pre-commit:
+  parallel: false
+  jobs:
+    - name: csharp-format-check
+      run: task format:check
