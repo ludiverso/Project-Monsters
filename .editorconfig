@@ -1,0 +1,72 @@
+root = true
+
+# ------------------------------------------------------------
+# Global rules (open-source portability)
+# ------------------------------------------------------------
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Markdown keeps intentional trailing spaces for hard line breaks.
+[*.md]
+trim_trailing_whitespace = false
+
+# Unity YAML-like assets should keep stable formatting.
+[*.{yml,yaml,unity,asset,meta}]
+indent_style = space
+indent_size = 2
+
+# ------------------------------------------------------------
+# C# (Unity-oriented defaults)
+# ------------------------------------------------------------
+[*.cs]
+indent_style = space
+indent_size = 4
+tab_width = 4
+
+# Keep System usings first and place usings outside namespace.
+dotnet_sort_system_directives_first = true
+dotnet_separate_import_directive_groups = false
+csharp_using_directive_placement = outside_namespace:error
+
+# Allman braces are the common style in Unity and C# projects.
+csharp_new_line_before_open_brace = all
+
+# Prefer explicit types for readability in gameplay/runtime code.
+csharp_style_var_for_built_in_types = false:error
+csharp_style_var_when_type_is_apparent = false:error
+csharp_style_var_elsewhere = false:error
+
+# Keep formatting deterministic across editors.
+dotnet_style_qualification_for_field = false:error
+dotnet_style_qualification_for_property = false:error
+dotnet_style_qualification_for_method = false:error
+dotnet_style_qualification_for_event = false:error
+
+# Basic whitespace/newline preferences.
+csharp_preserve_single_line_blocks = true
+csharp_preserve_single_line_statements = true
+csharp_space_between_method_declaration_parameter_list_parentheses = false
+csharp_space_between_method_call_parameter_list_parentheses = false
+csharp_space_between_parentheses = false
+csharp_space_before_colon_in_inheritance_clause = true
+csharp_space_after_colon_in_inheritance_clause = true
+
+# Encourage braces on multiline statements.
+csharp_prefer_braces = true:error
+
+# ------------------------------------------------------------
+# Strict analyzer severities for CI enforcement
+# ------------------------------------------------------------
+[*.cs]
+dotnet_analyzer_diagnostic.category-Style.severity = error
+dotnet_diagnostic.IDE0005.severity = error
+dotnet_diagnostic.IDE0011.severity = error
+dotnet_diagnostic.IDE0040.severity = error
+dotnet_diagnostic.IDE0055.severity = error
+dotnet_diagnostic.IDE0065.severity = error
+dotnet_diagnostic.IDE1006.severity = error
+dotnet_diagnostic.IDE0007.severity = error
+dotnet_diagnostic.IDE0008.severity = error
