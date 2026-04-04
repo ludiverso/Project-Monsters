@@ -1,0 +1,26 @@
+name: Lint
+
+on:
+  pull_request:
+
+jobs:
+  csharp-format:
+    name: C# Format Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      - name: Setup Task
+        uses: arduino/setup-task@v2
+        with:
+          version: 3.x
+
+      - name: Verify formatting
+        run: task format:check
