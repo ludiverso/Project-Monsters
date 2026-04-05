@@ -10,37 +10,38 @@ Este também é um projeto open-source colaborativo, e recebemos contribuições
 
 ## Tecnologias
 
-- Unity `6000.4.0f1`
+- Unity `6.0 LTS`
 - .NET SDK `10.0.201` (definido em `global.json`)
 - [go-task](https://taskfile.dev/) para orquestracao de comandos
 - [Lefthook](https://lefthook.dev/) para hooks de Git
 
 ## Requisitos
 
-- Unity Hub + Unity Editor `6000.4.0f1`
+- Unity Hub ( Opcional)
+- Unity Editor `6.0 LTS`
 - .NET SDK compativel com `global.json`
 - Git
 - go-task (Task)
 - Lefthook
 
-## Onboarding local
+## Como Rodar
 
-1. Clone o repositorio:
+Clone o repositorio:
 
 ```bash
 git clone https://github.com/ludiverso/Project-Monsters.git
 cd Project-Monsters
 ```
 
-2. Abra o projeto no Unity `6000.4.0f1`.
-3. Gere os arquivos de projeto C# pelo Unity (solution/csproj).
-4. Instale os hooks:
+1. Abra o projeto no Unity.
+2. Gere os arquivos de projeto C# pelo Unity (solution/csproj).
+3. Instale os hooks:
 
 ```bash
 lefthook install
 ```
 
-5. Valide o setup:
+1. Valide o setup:
 
 ```bash
 task format:check
