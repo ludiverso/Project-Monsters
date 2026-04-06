@@ -1,4 +1,4 @@
-﻿## Sobre o Projeto
+﻿# Sobre o Projeto
 
 Este projeto é um jogo mobile open-source desenvolvido na Unity, pensado especialmente para crianças pequenas, com foco em oferecer uma experiência calma, acessível e acolhedora.
 
@@ -10,36 +10,34 @@ Este também é um projeto colaborativo e transparente. Acreditamos que a tecnol
 
 ## Tecnologias
 
-- Unity `6000.4.0f1`
-- .NET SDK `10.0` LTS
+- Unity `6.3 LTS`
+- .NET SDK `10.0.5 LTS`
 - [Husky.Net](https://www.nuget.org/packages/Husky) para hooks de Git
 
 ## Requisitos
 
-- Unity Hub
-- .NET SDK compatível com `global.json`
-- Git
+- Unity Hub (Opcional)
+- .NET SDK `10.0 LTS`
 
-## Onboarding local
-
-1. Clone o repositório:
+## Como rodar
 
 ```bash
-git clone https://github.com/ludiverso/Project-Monsters.git
-cd Project-Monsters
-```
+ # Clone o Repositorio
+ git clone https://github.com/ludiverso/Project-Monsters.git
 
-2. Abra o projeto pelo Unity Hub.
-3. Restaure as ferramentas locais:
+ # Vá até a pasta do projeto
+ cd Project-Monsters
 
-```bash
-dotnet tool restore
-```
+ # Abra o projeto pelo Unity Hub.
 
-4. Instale os hooks:
+ # Verifique a versão do dotnet instalada (precisa ser a 10.0.105 ou superior)
+ dotnet --version
 
-```bash
-dotnet husky install
+ # Restaure as ferramentas locais
+ dotnet tool restore
+
+ # Instale o git hooks através do husky (instalado passo anterior - tool restore)
+ dotnet husky install
 ```
 
 ## Qualidade e CI
@@ -48,14 +46,6 @@ dotnet husky install
 - O hook de `commit-msg` valida as mensagens de commit no padrão conventional commits.
 - O GitHub Actions valida a formatação e as mensagens de commit.
 - Se alguma dessas validações falhar, o commit ou o CI será interrompido.
-
-## Como contribuir
-
-1. Crie uma branch a partir da branch de desenvolvimento.
-2. Faça mudanças pequenas e com commits descritivos.
-3. Siga a [convenção de commits](docs/commit-convention.md).
-4. Garanta que `dotnet format ./Monsters.slnx --verify-no-changes` passa localmente.
-5. Abra um Pull Request explicando o que foi alterado e o motivo.
 
 ## Créditos
 
