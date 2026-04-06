@@ -4,6 +4,33 @@ on:
   pull_request:
 
 jobs:
+  commitlint:
+    name: Commitlint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      - name: Validate PR commits
+        run: |
+          git log --reverse --no-merges --format='%H%x09%s' "${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}" |
+          while IFS=$'\t' read -r sha subject; do
+            if [ -z "$sha" ]; then
+              continue
+            fi
+
+            echo "Validating $sha: $subject"
+            dotnet run --file tools/commitlint.cs -- --message "$subject"
+          done
+
   csharp-format:
     name: C# Format Check
     runs-on: ubuntu-latest
@@ -17,10 +44,5 @@ jobs:
         with:
           global-json-file: global.json
 
-      - name: Setup Task
-        uses: arduino/setup-task@v2
-        with:
-          version: 3.x
-
       - name: Verify formatting
-        run: task format:check
+        run: dotnet format ./Monsters.slnx --verify-no-changes
