@@ -1,0 +1,4 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:IntegerField label="Coins" value="42" name="Coins" style="align-items: center; justify-content: center; align-self: center; align-content: center; -unity-font-style: bold; background-color: rgba(0, 0, 0, 0); color: rgb(0, 0, 0); font-size: 30px; position: absolute;"/>
+    <ui:VisualElement style="flex-grow: 1;"/>
+</ui:UXML>
