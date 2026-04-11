@@ -1,9 +1,9 @@
 {
   "tasks": [
     {
-      "name": "dotnet-format-monsters",
+      "name": "dotnet-format-project-monsters",
       "command": "dotnet",
-      "args": ["format", "./Monsters.slnx", "--verify-no-changes"]
+      "args": ["format", "./Project-Monsters.slnx", "--verify-no-changes"]
     }
   ]
 }
