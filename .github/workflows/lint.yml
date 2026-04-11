@@ -45,4 +45,4 @@ jobs:
           global-json-file: global.json
 
       - name: Verify formatting
-        run: dotnet format ./Monsters.slnx --verify-no-changes
+        run: dotnet format ./Project-Monsters.slnx --verify-no-changes
